@@ -103,6 +103,6 @@ Console.WriteLine($"Tipo: {pagamento}");
 if (pagamento == "Parcelado")
 {
     valorParcelas = valorFinal/quantidadeParcelas;
-    Console.WriteLine($"Parcela: {parcelas:C}");
+    Console.WriteLine($"Parcela: {valorParcelas:C}");
 }
 
