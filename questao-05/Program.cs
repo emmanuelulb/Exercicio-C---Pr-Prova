@@ -46,7 +46,7 @@ string numeropagamento = Console.ReadLine();
 string formaPagamento = "" ;
 decimal ajustePagamento = 0;
 string pagamento = "";
-int parcelamento = 0;
+int quantidadeParcelas = 0;
 bool loop = true;
 while (loop)
 {
@@ -77,7 +77,7 @@ while (loop)
             formaPagamento = "Crédito";
             ajustePagamento = valorComCupom * (-0.05m);
             Console.Write("Quantas parcelas: ");
-            while(!int.TryParse(Console.ReadLine(), out parcelamento))
+            while(!int.TryParse(Console.ReadLine(), out quantidadeParcelas) || quantidadeParcelas <= 0)
                 Console.WriteLine("Entrada Inválida");
             pagamento = "Parcelado";
             loop = false;
@@ -89,7 +89,7 @@ while (loop)
     }
 }
 decimal valorFinal = valorComCupom - ajustePagamento;
-decimal parcelas = 0;
+decimal valorParcelas = 0;
 Console.Clear();
 Console.WriteLine($"=== COMPRA ONLINE ===");
 Console.WriteLine($"Cliente: {nomeCliente}");
@@ -102,7 +102,7 @@ Console.WriteLine($"Pagamento: {formaPagamento}");
 Console.WriteLine($"Tipo: {pagamento}");
 if (pagamento == "Parcelado")
 {
-    parcelas = valorFinal/parcelamento;
+    valorParcelas = valorFinal/quantidadeParcelas;
     Console.WriteLine($"Parcela: {parcelas:C}");
 }
 
