@@ -68,7 +68,7 @@ while (true)
 
 bool contemAtividade = tarefasEstudo.Contains(atividade);
 if (contemAtividade)
-    Console.WriteLine($"Contém \"{atividade}\"");
+    Console.WriteLine($"Contém \"{atividade}\". Ela será adicionada.");
 else
 {
     Console.WriteLine($"Não Contém \"{atividade}\"");
