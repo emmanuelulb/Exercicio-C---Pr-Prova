@@ -1,43 +1,43 @@
-﻿Dictionary<string , int> itemsLoja = new Dictionary<string, int> {{"Mouse", 10},{"Teclado", 6}, {"Monitor", 4}, {"Cabo HDMI", 18}, {"Cadeira", 5}};
+﻿Dictionary<string , int> itensLoja = new Dictionary<string, int> {{"Mouse", 10},{"Teclado", 6}, {"Monitor", 4}, {"Cabo HDMI", 18}, {"Cadeira", 5}};
 
 Console.WriteLine("=== ESTOQUE INICIAL ===");
-foreach (var item in itemsLoja)
+foreach (var item in itensLoja)
 {
     Console.WriteLine($"Item: {item.Key} | Quantidade: {item.Value}");
 }
 Console.WriteLine();
 Console.WriteLine("=== OPERAÇÕES ===");
 
-itemsLoja.Add("SSD", 7);
-Console.WriteLine($"Adicionando: SSD ({itemsLoja["SSD"]})");
+itensLoja.Add("SSD", 7);
+Console.WriteLine($"Adicionando: SSD ({itensLoja["SSD"]})");
 
-itemsLoja["Teclado"] = 12;
-Console.WriteLine($"Atualizando: Teclado ({itemsLoja["Teclado"]})");
+itensLoja["Teclado"] = 12;
+Console.WriteLine($"Atualizando: Teclado ({itensLoja["Teclado"]})");
 
-bool existeWebcam = itemsLoja.ContainsKey("Webcam");
+bool existeWebcam = itensLoja.ContainsKey("Webcam");
 if (existeWebcam)
     Console.WriteLine("Existe Webcam? Sim");
 else
     Console.WriteLine("Existe Webcam? Não");
 
 int contadorEstoqueBaixo = 0;
-foreach (var quantidade in itemsLoja)
+foreach (var quantidade in itensLoja)
 {
     if (quantidade.Value < 8)
     contadorEstoqueBaixo++;
 }
 Console.WriteLine($"Estoque baixo (<8): {contadorEstoqueBaixo}");
 
-itemsLoja.Remove("Monitor");
+itensLoja.Remove("Monitor");
 Console.WriteLine($"Removido: Monitor");
 Console.WriteLine();
 Console.WriteLine("=== ESTOQUE FINAL ===");
-foreach (var item in itemsLoja)
+foreach (var item in itensLoja)
 {
     Console.WriteLine($"Item: {item.Key} | Quantidade: {item.Value}");
 }
 Console.WriteLine();
 int totalProdutos = 0;
-foreach (var quantidade in itemsLoja.Values)
+foreach (var quantidade in itensLoja.Values)
     totalProdutos += quantidade;
 Console.WriteLine($"Total de produtos: {totalProdutos}");

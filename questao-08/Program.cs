@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-int contadorMaior30 = 0;
+﻿int contadorMaior30 = 0;
 decimal valorTotal = 0;
 decimal maiorVenda = decimal.MinValue;
 decimal menorVenda = decimal.MaxValue;
@@ -17,8 +16,8 @@ valoresComandas.Add(30);
 
 foreach (var valor in valoresComandas)
 {
-   if(valor > 30)
-    contadorMaior30++;
+    if (valor > 30)
+        contadorMaior30++;
 }
 
 foreach (var valor in valoresComandas)
@@ -36,9 +35,10 @@ else
 
 Console.Clear();
 Console.WriteLine($"=== RELATÓRIO DO DIA ===");
+
 for (int i = 0; i < valoresComandas.Count; i++)
 {
-    Console.WriteLine($"Comanda {i+1}: {valoresComandas[i]}");
+    Console.WriteLine($"Comanda {i + 1}: {valoresComandas[i]}");
 
     if (valoresComandas[i] > maiorVenda)
         maiorVenda = valoresComandas[i];
@@ -47,6 +47,7 @@ for (int i = 0; i < valoresComandas.Count; i++)
         menorVenda = valoresComandas[i];
 
 }
+
 Console.WriteLine();
 Console.WriteLine($"Faturamento Total: {valorTotal:C}");
 Console.WriteLine($"Pedidos acima de R$30: {contadorMaior30}");
