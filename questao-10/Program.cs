@@ -59,14 +59,20 @@
 // Console.WriteLine();
 // Console.WriteLine($"Líquido a receber: {salarioDescontoVT:C}");
 
-string ValidadorString (string variavelString)
+
+
+string nome = ValidadorString("Digite seu nome: ");
+
+string ValidadorString (string mensagem)
 {
-    while (string.IsNullOrWhiteSpace(variavelString))
+    Console.Write(mensagem);
+    string entrada = Console.ReadLine();
+    while (string.IsNullOrWhiteSpace(entrada) || entrada.Any(char.IsNumber))
     {
         Console.WriteLine("Entrada inválida, tente novamente: ");
-        variavelString = Console.ReadLine();
+        entrada = Console.ReadLine();
     }
-    return variavelString;
+    return entrada;
 }
 
 decimal ValidadorDecimal (decimal variavelDecimal)
